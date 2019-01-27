@@ -3,7 +3,7 @@ package main
 import (
 	"log"
 	"net/http"
-	bingo "github.com/neerajrush/playground/bingo"
+	bingo "github.com/neerajrush/go-grpc-js-playground/bingo"
 )
 
 func main() {
@@ -15,5 +15,5 @@ func main() {
 	http.HandleFunc("/index", bingo.IndexHandler)
 	http.HandleFunc("/home", bingo.IndexHandler)
 	//log.Fatalf("failed to listen http:", http.ListenAndServe(":80", nil))
-	log.Fatalf("failed to listen http:", http.ListenAndServeTLS(":443", "certs/cert.pem", "certs/key.pem", nil))
+	log.Fatalf("failed to listen http:", http.ListenAndServeTLS(":443", "/usr/local/certs/cert.pem", "/usr/local/certs/key.pem", nil))
 }
